@@ -9,10 +9,12 @@
 
 
 .inicio {
+    background-color: rgba(0, 0, 0, 0.4);
     background-image: url("imagens/8430161.png");
-    background-size: 1540px 740px;
+    background-size: cover; /*1540px 740px;*/
+    background-blend-mode: multiply;
     height: 739px;
-    width: 1515px;
+    width: 100%;
 }
 
 .navbar {
@@ -65,6 +67,16 @@
     100%{background-color: white; color:#3F7EB1;}
 }
 
+@keyframes botao-hover_login {
+    0%{background-color: #97a4af; color: rgb(231, 12, 12);}
+    20%{background-color: #97a4af; opacity: 40%; color: rgb(231, 12, 12);}
+    30%{background-color: #97a4af; opacity: 5%; color: rgb(231, 12, 12);}
+    50%{background-color: rgb(231, 12, 12); opacity: 20%; color:#97a4af;}
+    70%{background-color: rgb(231, 12, 12); opacity: 50%; color:#97a4af;}
+    80%{background-color: rgb(231, 12, 12); opacity: 80%; color:#97a4af;}
+    100%{background-color: rgb(231, 12, 12); color:#97a4af;}
+}
+
 .navbar button:hover {
     animation: botao-hover 0.7s both;
 }
@@ -83,6 +95,19 @@
     100%{background-color: white; color: #3F7EB1; border-radius: 5px;}
 }
 
+@keyframes fundo_login {
+    0%{background: none;}
+    10%{background-color: rgb(231, 12, 12); color: #97a4af; border-radius: 5px; opacity: 10%;}
+    20%{background-color: rgb(231, 12, 12); color: #97a4af; border-radius: 5px; opacity: 20%;}
+    30%{background-color: rgb(231, 12, 12); color: #97a4af; border-radius: 5px; opacity: 30%;}
+    40%{background-color: rgb(231, 12, 12); color: #97a4af; border-radius: 5px; opacity: 40%;}
+    50%{background-color: rgb(231, 12, 12); color: #97a4af; border-radius: 5px; opacity: 50%;}
+    60%{background-color: rgb(231, 12, 12); color: #97a4af; border-radius: 5px; opacity: 60%;}
+    70%{background-color: rgb(231, 12, 12); color: #97a4af; border-radius: 5px; opacity: 70%;}
+    80%{background-color: rgb(231, 12, 12); color: #97a4af; border-radius: 5px; opacity: 80%;}
+    90%{background-color: rgb(231, 12, 12); color: #97a4af; border-radius: 5px; opacity: 90%;}
+    100%{background-color: rgb(231, 12, 12); color: #97a4af; border-radius: 5px;}
+}
 
 ul a{
     text-decoration: none;
@@ -102,6 +127,7 @@ ul a:hover {
 .texto-inicial {
     font-size: 25px;
     color: white;
+    text-shadow: 0px 4px 4px rgb(0, 0, 0, 0.65);
 }
 
 .frase {
@@ -117,4 +143,133 @@ ul a:hover {
     margin-top: 50px;
     justify-content: space-evenly;
 }
+iframe {
+    border-radius: 15px;
+}
 
+#body_login{
+    background-color: rgba(0, 0, 0, 0.8);
+    background-image: url(imagens/godofwariii_01.jpeg);
+    background-size: cover;
+    background-blend-mode: multiply;
+}
+
+.navbar_login {
+    display: flex;
+    justify-content: space-around;
+    padding: 15px;
+    align-items: center;
+    font-size: 18px;
+}
+
+.navbar_login ul {
+    display: flex;
+    list-style: none;
+}
+
+.navbar_login button{
+    width: 100px;
+    height: 30px;
+    background-color: #97a4af;
+    border-radius: 12px;
+    border: 1px solid #97a4af;
+    color: rgb(231, 12, 12);
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.navbar_login button:hover {
+    animation: botao-hover_login 0.7s both;
+}
+
+.navbar_login ul a{
+    text-decoration: none;
+    color: rgb(231, 12, 12);
+}
+
+.navbar_login ul a:hover {
+    animation: fundo_login 0.4s both;
+}
+
+#section_login {
+    display: flex;
+    justify-content: center;
+}
+
+.div_login{
+    background-color: black;
+    height: 600px;
+    width: 1000px;
+    border-radius: 30px;
+    background-image: url(imagens/thumb-1920-925329\ 1.jpg);
+    background-size: 500px 600px;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: end;
+}
+
+
+#div_form {
+    margin-right: 120px;
+    margin-top: 130px;
+}
+
+
+#div_form input {
+    height: 20px;
+    width: 250px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+#div_form h1 {
+    color: rgb(205, 180, 18);
+    margin-bottom: 70px;
+    text-align: center;
+    font-family: 'GodOfWar', sans-serif;
+}
+
+#div_form h2 {
+    color: rgb(231, 12, 12);
+    font-family: 'GodOfWar', sans-serif;
+}
+
+#div_form button {
+    position: relative;
+    left: 80px;
+    width: 100px;
+    height: 30px;
+    background-color: #97a4af;
+    border-radius: 5px;
+    border: 1px solid #97a4af;
+    color: rgb(231, 12, 12);
+    cursor: pointer;
+    font-size: 16px;
+    font-family: 'GodOfWar', sans-serif;
+}
+
+#div_form button:hover {
+    animation: fundo_login 0.3s both;
+}
+
+#div_form a{
+    color: rgb(205, 180, 18);
+    text-decoration: none;
+    font-size: 12px;
+}
+
+#div_form #esqueci_senha {
+    position: relative;
+    left: 150px;
+    bottom: 20px;
+}
+
+#div_form #sem_cadastro {
+    position: relative;
+    left: 75px;
+}
+
+#div_form a:hover {
+    color: rgb(231, 12, 12);
+    border-bottom: 1px solid rgb(231, 12, 12);
+}
