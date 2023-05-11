@@ -22,7 +22,8 @@
     justify-content: space-around;
     padding: 15px;
     align-items: center;
-    font-size: 18px;
+    font-size: 17.5px;
+    font-weight: 700;
 }
 
 .navbar ul {
@@ -51,10 +52,11 @@
     height: 30px;
     background-color: #3F7EB1;
     border-radius: 12px;
-    border: 1px solid #3F7EB1;
+    border: 0px solid black;
     color: white;
     cursor: pointer;
     font-size: 16px;
+    font-weight: 700;
 }
 
 @keyframes botao-hover {
@@ -68,13 +70,13 @@
 }
 
 @keyframes botao-hover_login {
-    0%{background-color: #97a4af; color: rgb(231, 12, 12);}
-    20%{background-color: #97a4af; opacity: 40%; color: rgb(231, 12, 12);}
-    30%{background-color: #97a4af; opacity: 5%; color: rgb(231, 12, 12);}
-    50%{background-color: rgb(231, 12, 12); opacity: 20%; color:#97a4af;}
-    70%{background-color: rgb(231, 12, 12); opacity: 50%; color:#97a4af;}
-    80%{background-color: rgb(231, 12, 12); opacity: 80%; color:#97a4af;}
-    100%{background-color: rgb(231, 12, 12); color:#97a4af;}
+    0%{background-color: white; color: rgb(231, 12, 12);}
+    20%{background-color: white; opacity: 40%; color: rgb(231, 12, 12);}
+    30%{background-color: white; opacity: 5%; color: rgb(231, 12, 12);}
+    50%{background-color: rgb(231, 12, 12); opacity: 20%; color:white;}
+    70%{background-color: rgb(231, 12, 12); opacity: 50%; color:white;}
+    80%{background-color: rgb(231, 12, 12); opacity: 80%; color:white;}
+    100%{background-color: rgb(231, 12, 12); color:white;}
 }
 
 .navbar button:hover {
@@ -97,16 +99,16 @@
 
 @keyframes fundo_login {
     0%{background: none;}
-    10%{background-color: rgb(231, 12, 12); color: #97a4af; border-radius: 5px; opacity: 10%;}
-    20%{background-color: rgb(231, 12, 12); color: #97a4af; border-radius: 5px; opacity: 20%;}
-    30%{background-color: rgb(231, 12, 12); color: #97a4af; border-radius: 5px; opacity: 30%;}
-    40%{background-color: rgb(231, 12, 12); color: #97a4af; border-radius: 5px; opacity: 40%;}
-    50%{background-color: rgb(231, 12, 12); color: #97a4af; border-radius: 5px; opacity: 50%;}
-    60%{background-color: rgb(231, 12, 12); color: #97a4af; border-radius: 5px; opacity: 60%;}
-    70%{background-color: rgb(231, 12, 12); color: #97a4af; border-radius: 5px; opacity: 70%;}
-    80%{background-color: rgb(231, 12, 12); color: #97a4af; border-radius: 5px; opacity: 80%;}
-    90%{background-color: rgb(231, 12, 12); color: #97a4af; border-radius: 5px; opacity: 90%;}
-    100%{background-color: rgb(231, 12, 12); color: #97a4af; border-radius: 5px;}
+    10%{background-color: rgb(231, 12, 12); color: white; border-radius: 5px; opacity: 10%;}
+    20%{background-color: rgb(231, 12, 12); color: white; border-radius: 5px; opacity: 20%;}
+    30%{background-color: rgb(231, 12, 12); color: white; border-radius: 5px; opacity: 30%;}
+    40%{background-color: rgb(231, 12, 12); color: white; border-radius: 5px; opacity: 40%;}
+    50%{background-color: rgb(231, 12, 12); color: white; border-radius: 5px; opacity: 50%;}
+    60%{background-color: rgb(231, 12, 12); color: white; border-radius: 5px; opacity: 60%;}
+    70%{background-color: rgb(231, 12, 12); color: white; border-radius: 5px; opacity: 70%;}
+    80%{background-color: rgb(231, 12, 12); color: white; border-radius: 5px; opacity: 80%;}
+    90%{background-color: rgb(231, 12, 12); color: white; border-radius: 5px; opacity: 90%;}
+    100%{background-color: rgb(231, 12, 12); color: white; border-radius: 5px;}
 }
 
 ul a{
@@ -159,7 +161,8 @@ iframe {
     justify-content: space-around;
     padding: 15px;
     align-items: center;
-    font-size: 18px;
+    font-size: 17.5px;
+    font-weight: 700;
 }
 
 .navbar_login ul {
@@ -170,12 +173,13 @@ iframe {
 .navbar_login button{
     width: 100px;
     height: 30px;
-    background-color: #97a4af;
+    background-color: white;
     border-radius: 12px;
-    border: 1px solid #97a4af;
+    border: 0px solid black;
     color: rgb(231, 12, 12);
     cursor: pointer;
     font-size: 16px;
+    font-weight: 700;
 }
 
 .navbar_login button:hover {
@@ -184,7 +188,7 @@ iframe {
 
 .navbar_login ul a{
     text-decoration: none;
-    color: rgb(231, 12, 12);
+    color: white;
 }
 
 .navbar_login ul a:hover {
@@ -208,68 +212,150 @@ iframe {
     justify-content: end;
 }
 
-
-#div_form {
-    margin-right: 120px;
-    margin-top: 130px;
+#div_form1 {
+    width: 50%;
 }
 
 
-#div_form input {
+#div_form2 {
+    background-image: url(imagens/blood-png-transparent-background-2-700x505.png);
+    display: flex;
+    flex-direction: column ;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+
+#div_form2 input {
     height: 20px;
     width: 250px;
     border-radius: 5px;
     margin-bottom: 20px;
 }
 
-#div_form h1 {
+#div_form2 h1 {
     color: rgb(205, 180, 18);
-    margin-bottom: 70px;
+    margin-bottom: 40px;
     text-align: center;
     font-family: 'GodOfWar', sans-serif;
 }
 
-#div_form h2 {
-    color: rgb(231, 12, 12);
+#div_form2 h2 {
+    color: #97a4af;
     font-family: 'GodOfWar', sans-serif;
 }
 
-#div_form button {
-    position: relative;
-    left: 80px;
-    width: 100px;
-    height: 30px;
-    background-color: #97a4af;
+#div_form2 button {
+    width: 110px;
+    height: 40px;
+    background-color: white;
     border-radius: 5px;
-    border: 1px solid #97a4af;
+    border: 0px solid #97a4af;
     color: rgb(231, 12, 12);
     cursor: pointer;
-    font-size: 16px;
+    font-size: 19px;
     font-family: 'GodOfWar', sans-serif;
+    font-weight: 700;
 }
 
-#div_form button:hover {
+#div_form2 button:hover {
     animation: fundo_login 0.3s both;
 }
 
-#div_form a{
+#div_form2 a{
     color: rgb(205, 180, 18);
     text-decoration: none;
     font-size: 12px;
 }
 
-#div_form #esqueci_senha {
-    position: relative;
-    left: 150px;
-    bottom: 20px;
-}
-
-#div_form #sem_cadastro {
-    position: relative;
-    left: 75px;
-}
-
-#div_form a:hover {
+#div_form2 a:hover {
     color: rgb(231, 12, 12);
     border-bottom: 1px solid rgb(231, 12, 12);
+}
+
+#sem_cadastro {
+    margin-top: 10px;
+}
+
+#body_cadastro {
+    background-color: rgba(0, 0, 0, 0.8);
+    background-image: url(imagens/God-of-War-5.jpg);
+    background-size: cover;
+    background-blend-mode: multiply;
+}
+
+#section_cadastro {
+    background-image: url(imagens/pergaminho.png);
+    background-size: 700px 650px;
+    background-position: center;
+    height: 600px;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.div_input {
+    font-size: 15px;
+    color:#3F7EB1;
+}
+
+.div_input input {
+    height: 18px;
+    width: 210px;
+    border-radius: 5px;
+    border: 0px solid black;
+}
+
+.div_input span {
+    color: red;
+    font-weight: normal;
+}
+
+.div_cadastrar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.div_cadastrar button {
+    width: 110px;
+    height: 40px;
+    background-color: #3F7EB1;
+    border-radius: 5px;
+    border: 0px solid #97a4af;
+    color: white;
+    cursor: pointer;
+    font-size: 19px;
+    font-weight: 700;
+}
+
+.div_cadastrar button:hover {
+    animation: fundo 0.3s both;
+}
+
+.div_cadastrar a {
+    text-decoration: none;
+    font-size: 12px;
+    margin-top: 10px;
+    color: #3F7EB1;
+    font-weight: 600;
+}
+
+.div_cadastrar a:hover {
+    color: white;
+    border-bottom: 1px solid white;
+}
+
+.div_input .obrigatorio {
+    color: black;
+    margin-top: 10px;
+}
+
+.ajustar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
