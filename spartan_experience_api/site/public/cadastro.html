@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cadastre-se</title>
+
+
+    <script src="./js/funcoes.js"></script>
+
+
+    <link rel="icon" href="assets/imagens/kisspng-god-of-war-omega-collection-t-shirt-stencil-krato-note-xhstormr-5b7c91a2467ab5.9342983115348904022887.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body id="body_cadastro">
+    <nav class="navbar">
+        <ul class="nav_ul1">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="">Personagens</a></li>
+            <li><a href="">Sobre a Saga</a></li>
+        </ul>
+        <ul class="nav_ul2">
+            <li><img src="assets/imagens/God_of_War_2018_logo 1.png" alt=""></li>
+        </ul>
+        <ul class="nav_ul3">
+            <li><button onclick="window.location.href='cadastro.html'">Cadastrar</button></li>
+            <li><button onclick="window.location.href='login.html'">Login</button></li>
+        </ul>
+    </nav>
+    <section id="section_cadastro">
+        <div class="div_input">
+            <h2>Nome <span>*</span></h2>
+            <input id="nome_input">
+        </div>
+        <div class="div_input">
+            <h2>Email <span>*</span></h2>
+            <input id="email_input">
+        </div>
+        <div class="div_input ajustar">
+            <h2>Personagem favorito <span>*</span></h2>
+            <select name="" id="select_personagem">
+                <option value="1">Kratos</option>
+                <option value="2">Ares</option>
+                <option value="3">Zeus</option>
+                <option value="4">Atena</option>
+                <option value="5">Atreus</option>
+                <option value="6">Freya</option>
+                <option value="7">Brok</option>
+                <option value="8">Sindri</option>
+                <option value="9">Thor</option>
+                <option value="10">Odin</option>
+            </select>
+        </div>
+        <div class="div_input">
+            <h2>Senha <span>*</span></h2>
+            <input type="password" id="senha_input">
+        </div>
+        <div class="div_input ajustar">
+            <h2>Confirmar senha <span>*</span></h2>
+            <input type="password" id="confirmacao_senha_input">
+            <span class="obrigatorio">Preencha os campos obrigatórios (<span>*</span>)</span>
+        </div>
+        <div class="div_cadastrar">
+        <button onclick="cadastrar()">Cadastrar</button> <br>
+        <a href="">Já possui conta?</a>
+        </div>
+    </section>
+</body>
+
+</html>
+
+<script>
+    function cadastrar() {
+        //aguardar();
+
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+        var nomeVar = nome_input.value;
+        var emailVar = email_input.value;
+        var personagemVar = select_personagem.value;
+        var senhaVar = senha_input.value;
+        var confirmacaoSenhaVar = confirmacao_senha_input.value;
+
+        if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
+           // cardErro.style.display = "block"
+           // mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+    
+            finalizarAguardar();
+            return false;
+        }
+        //else {
+           // setInterval(sumirMensagem, 5000)
+        //}
+
+        // Enviando o valor da nova input
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                nomeServer: nomeVar,
+                emailServer: emailVar,
+                personagemServer: personagemVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                //cardErro.style.display = "block";
+
+                //mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+        
+                setTimeout(() => {
+                    window.location = "login.html";
+                }, "2000")
+
+                limparFormulario();
+                finalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            finalizarAguardar();
+        });
+
+        return false;
+    }
+
+    //function sumirMensagem() {
+      //  cardErro.style.display = "none"
+    //}
+
+</script>
