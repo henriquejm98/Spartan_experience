@@ -362,3 +362,93 @@ iframe {
     align-items: center;
 }
 
+.section_quiz {
+    display: flex;
+    justify-content: center;
+}
+
+.div_questao {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    gap: 60px;
+    margin-bottom: 50px;
+    font-weight: 600;
+}
+
+.div_questoes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    flex-direction: column;
+    width: 750px;
+    height: 600px;
+    border-radius: 30px;
+    border: 2px solid #3F7EB1;
+}
+
+.div_questoes h1 {
+    color: white;
+    position: relative;
+    bottom: 80px;
+}
+
+#div_questao1 {
+    display: flex;      
+}
+
+#div_questao2 {
+    display: none;
+}
+
+#div_questao3 {
+    display: none;
+}
+
+#div_questao4 {
+    display: none;
+}
+
+#div_questao5 {
+    display: none;
+}
+
+#div_erro {
+    color: red;
+    margin-top: 20px;
+    text-align: center;
+    display: none;
+}
+
+.pergunta {
+    text-align: center;
+}
+
+#body_quiz {
+    background-color: rgba(0, 0, 0, 0.8);
+    background-image: url('../assets/imagens/god-of-war.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-blend-mode: multiply;
+}
+
+.div_botoes {
+    gap: 30px;
+    display: flex;
+}
+
+.botoes_quiz {
+    width: 110px;
+    height: 40px;
+    background-color: #3F7EB1;
+    border-radius: 5px;
+    border: 0px solid #97a4af;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+

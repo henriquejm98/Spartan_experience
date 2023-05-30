@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./js/funcoes.js"></script>
+    <link rel="icon" href="imagens/kisspng-god-of-war-omega-collection-t-shirt-stencil-krato-note-xhstormr-5b7c91a2467ab5.9342983115348904022887.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <title>Quiz</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="sweetalert2.all.min.js"></script>
+
+
+</head>
+
+<body id="body_quiz">
+    <nav class="navbar">
+        <ul class="nav_ul1">
+            <li><a href="">Inicio</a></li>
+            <li><a href="">Personagens</a></li>
+            <li><a href="">Sobre a Saga</a></li>
+        </ul>
+        <ul class="nav_ul2">
+            <li><img src="imagens/God_of_War_2018_logo 1.png" alt=""></li>
+        </ul>
+        <ul class="nav_ul3">
+            <li><button>Gráficos</button></li>
+            <li><button>Sair</button></li>
+        </ul>
+    </nav>
+    <section class="section_quiz">
+        <div class="div_questoes">
+            <h1>QUIZ</h1>
+            <div id="div_questao1" class="div_questao">
+                <div class="pergunta">
+                    1.Qual o nome das armas utilizadas por Kratos no primeiro God of War?
+                </div>
+                <div>
+                    <input type="radio" name="questao1" value="certa1A" class="respostas_questoes" id="opcao1">
+                    Lâminas do Caos <br>
+                    <input type="radio" name="questao1" value="errada1B" class="respostas_questoes" id="opcao2">
+                    Lâminas do Exílio <br>
+                    <input type="radio" name="questao1" value="errada1C" class="respostas_questoes" id="opcao3">
+                    Machado Leviatã <br>
+                    <input type="radio" name="questao1" value="errada1D" class="respostas_questoes" id="opcao4">
+                    Mjölnir
+                </div>
+            </div>
+            <div id="div_questao2" class="div_questao">
+                <div class="pergunta">
+                    2.Quais os nomes dos dois filhos de Kratos?
+                </div>
+                <div>
+                    <input type="radio" name="questao2" value="errada2A" class="respostas_questoes" id="opcao1">
+                    Valentina e Enzo <br>
+                    <input type="radio" name="questao2" value="errada2B" class="respostas_questoes" id="opcao2">
+                    Callisto e Atreus <br>
+                    <input type="radio" name="questao2" value="certa2C" class="respostas_questoes" id="opcao3"> Calliope
+                    e Atreus <br>
+                    <input type="radio" name="questao2" value="errada2D" class="respostas_questoes" id="opcao4">
+                    Callisto e Loki
+                </div>
+            </div>
+            <div id="div_questao3" class="div_questao">
+                <div class="pergunta">
+                    3.A quem Kratos pediu ajuda quando estava prestes a ser morto pelo exército bárbaro?
+                </div>
+                <div>
+                    <input type="radio" name="questao3" value="certa3A" class="respostas_questoes" id="opcao1"> Ares
+                    <br>
+                    <input type="radio" name="questao3" value="errada3B" class="respostas_questoes" id="opcao2"> Atena
+                    <br>
+                    <input type="radio" name="questao3" value="errada3C" class="respostas_questoes" id="opcao3"> Zeus
+                    <br>
+                    <input type="radio" name="questao3" value="errada3D" class="respostas_questoes" id="opcao4"> Thor
+                </div>
+            </div>
+            <div id="div_questao4" class="div_questao">
+                <div class="pergunta">
+                    4.Quem forjou a Lâmina do Olimpo?
+                </div>
+                <div>
+                    <input type="radio" name="questao4" value="errada4A" class="respostas_questoes" id="opcao1"> Kratos
+                    <br>
+                    <input type="radio" name="questao4" value="certa4B" class="respostas_questoes" id="opcao2"> Zeus
+                    <br>
+                    <input type="radio" name="questao4" value="errada4C" class="respostas_questoes" id="opcao3"> Hefesto
+                    <br>
+                    <input type="radio" name="questao4" value="errada4D" class="respostas_questoes" id="opcao4"> Hades
+                </div>
+            </div>
+            <div id="div_questao5" class="div_questao">
+                <div class="pergunta">
+                    5.Quem é a mãe de Atreus?
+                </div>
+                <div>
+                    <input type="radio" name="questao5" value="errada5A" class="respostas_questoes" id="opcao1"> Lysandra <br>
+                    <input type="radio" name="questao5" value="errada5B" class="respostas_questoes" id="opcao2"> Freya <br>
+                    <input type="radio" name="questao5" value="certa5C" class="respostas_questoes" id="opcao3"> Laufey <br>
+                    <input type="radio" name="questao5" value="errada5D" class="respostas_questoes" id="opcao4"> Sif
+                </div>
+            </div>
+            <div class="div_botoes">
+                <!-- <button class="botoes_quiz" onclick="voltarQuestao()">Questão anterior</button> -->
+                <button class="botoes_quiz" id="botaoAvancar" onclick="avancarQuestao()">Próxima questão</button>
+                <button id="botao_finalizar" class="botoes_quiz" onclick="finalizarQuiz()">Finalizar quiz</button>
+            </div>
+            <div id="div_erro">
+                Responda a questão para continuar
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
+
+<script>
+    var questao = 1
+    var respostas = [];
+    var respostas_corretas = ["certa1A", "certa2C", "certa3A", "certa4B", "certa5C"];
+    var opcaoEscolhida;
+    var pontuacao = 0;
+
+    document.getElementById('botao_finalizar').style.display = "none";
+
+    function avancarQuestao() {
+  
+        if (questao >= 1){
+            if(document.getElementById("opcao1").checked == false &&
+            document.getElementById("opcao2").checked == false &&
+            document.getElementById("opcao3").checked == false &&
+            document.getElementById("opcao4").checked == false){
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Erro',
+                    text: 'Responda a questão para continuar'
+            });
+            }else{
+                opcaoEscolhida = document.querySelector(`input[name="questao${questao}"]:checked`).value;
+                respostas.push(opcaoEscolhida)
+                if (questao < 5) {
+                    div_erro.style.display = "none";
+                }
+                document.getElementById(`div_questao${questao}`).style.display = "none";
+                questao++;
+                document.getElementById(`div_questao${questao}`).style.display = "flex";
+            }
+        }
+        document.getElementById('botao_finalizar').style.display = "none";
+        exibirBotao();
+        
+
+    }
+
+
+
+    // function voltarQuestao() {
+    //     if (questao > 1) {
+    //         document.getElementById(`div_questao${questao}`).style.display = "none";
+    //         questao--;
+    //         document.getElementById(`div_questao${questao}`).style.display = "flex";
+    //     }
+    //     document.getElementById('botao_finalizar').style.display = "none";
+    //     exibirBotao();
+    // }
+
+    function exibirBotao() {
+        if (questao == 5) {
+            document.getElementById('botao_finalizar').style.display = "block";
+            document.getElementById('botaoAvancar').style.display = "none";
+
+        }
+    }
+
+    function finalizarQuiz() {
+        opcaoEscolhida = document.querySelector(`input[name="questao${questao}"]:checked`).value;
+        respostas.push(opcaoEscolhida);
+        for(var contador = 0; contador < respostas.length; contador++){
+            if(respostas[contador] == respostas_corretas[contador]){
+                pontuacao++;
+            }
+        }
+        document.querySelector('input[name="questao1"]').checked = false;
+        document.querySelector('input[name="questao2"]').checked = false;
+        document.querySelector('input[name="questao3"]').checked = false;
+        document.querySelector('input[name="questao4"]').checked = false;
+        document.querySelector('input[name="questao5"]').checked = false;
+
+        var percentualAcerto = (pontuacao / 5) * 100;
+console.log(sessionStorage.ID_USUARIO);
+        fetch("/usuarios/cadastrar_quiz", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                percentualServer: percentualAcerto,
+                fkUsuario: sessionStorage.ID_USUARIO
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                //cardErro.style.display = "block";
+
+                //mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+        
+                setTimeout(() => {
+                    window.location = "index.html";
+                }, "2000")
+
+                limparFormulario();
+                finalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            // finalizarAguardar();
+        });
+
+        return false;
+    }
+    
+
+
+</script>
