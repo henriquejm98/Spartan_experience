@@ -20,6 +20,10 @@ router.post("/cadastrar_quiz", function (req, res) {
     usuarioController.cadastrar_quiz(req, res);
 });
 
+router.put("/atualizar_quiz", function (req, res) {
+    usuarioController.atualizar_quiz(req, res);
+});
+
 router.post("/autenticar", function (req, res) {
     usuarioController.entrar(req, res);
 });

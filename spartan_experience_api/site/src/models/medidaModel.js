@@ -1,6 +1,6 @@
 var database = require("../database/config");
 
-function buscarUltimasMedidas(idAquario, limite_linhas) {
+function buscarUltimasMedidas() {
 
     instrucaoSql = ''
 
@@ -16,6 +16,41 @@ function buscarUltimasMedidas(idAquario, limite_linhas) {
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
 }
+
+function buscarPercentual(idUsuario, limite_linhas) {
+
+    instrucaoSql = ''
+
+    if (process.env.AMBIENTE_PROCESSO == "producao") {
+        instrucaoSql = `select concat('Acertos de ', usuario.nome, ' (%)') as informacao, quiz.percentualAcerto as percentual from usuario join quiz on usuario.idUsuario = quiz.fkUsuario where usuario.idUsuario = ${idUsuario} group by quiz.percentualAcerto, usuario.nome;`;
+    } else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
+        instrucaoSql = `select concat('Acertos de ', usuario.nome, ' (%)') as informacao, quiz.percentualAcerto as percentual from usuario join quiz on usuario.idUsuario = quiz.fkUsuario where usuario.idUsuario = ${idUsuario} group by quiz.percentualAcerto, usuario.nome;`;
+    } else {
+        console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");
+        return
+    }
+
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
+function verificarQuiz(idUsuario, limite_linhas) {
+
+    instrucaoSql = ''
+
+    if (process.env.AMBIENTE_PROCESSO == "producao") {
+        instrucaoSql = `select count(fkUsuario) as verificacao, idQuiz from quiz join usuario on idUsuario = fkUsuario where idUsuario = ${idUsuario} group by idQuiz;`;
+    } else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
+        instrucaoSql = `select count(fkUsuario) as verificacao, idQuiz from quiz join usuario on idUsuario = fkUsuario where idUsuario = ${idUsuario} group by idQuiz;`;
+    } else {
+        console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");
+        return
+    }
+
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
 
 function buscarMedidasEmTempoReal(idAquario) {
 
@@ -50,5 +85,7 @@ function buscarMedidasEmTempoReal(idAquario) {
 
 module.exports = {
     buscarUltimasMedidas,
-    buscarMedidasEmTempoReal
+    buscarMedidasEmTempoReal,
+    buscarPercentual,
+    verificarQuiz
 }
