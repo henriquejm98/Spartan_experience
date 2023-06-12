@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="imagens/kisspng-god-of-war-omega-collection-t-shirt-stencil-krato-note-xhstormr-5b7c91a2467ab5.9342983115348904022887.png"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Personagens</title>
+  </head>
+  <body id="body_personagens">
+    <nav class="navbar_login">
+      <ul class="nav_ul1">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="#">Personagens</a></li>
+        <li><a href="">Sobre a Saga</a></li>
+      </ul>
+      <ul class="nav_ul2">
+        <li><img src="./assets/imagens/God_of_War_2018_logo 1.png" alt="" /></li>
+      </ul>
+      <ul id="nav_ul3">
+        <li><button onclick="window.location.href= 'cadastro.html'">Cadastrar</button></li>
+        <li><button onclick="window.location.href= 'login.html'">Login</button></li>
+      </ul>
+      <ul id="nav_ul4_personagens">
+        <li><button onclick="window.location.href= 'quiz.html'">Quiz</button></li>
+        <li><button onclick="logOut()">Sair</button></li>
+      </ul>
+    </nav>
+    <section id="section_personagens">
+      <div id="div_container_personagens">
+      <div id="div_select">
+        <select name="" id="select_personagem">
+          <option value="-1">Selecione um personagem</option>
+          <option value="0">Kratos</option>
+          <option value="1">Atena</option>
+          <option value="2">Zeus</option>
+          <option value="3">Gaia</option>
+          <option value="4">Ares</option>
+          <option value="5">Cronos</option>
+          <option value="6">Hades</option>
+          <option value="7">Poseidon</option>
+          <option value="8">Atreus</option>
+          <option value="9">Odin</option>
+          <option value="10">Thor</option>
+          <option value="11">Freya</option>
+          <option value="12">Baldur</option>
+        </select>
+        <button onclick="visualizar(select_personagem.value)">
+          Selecionar
+        </button>
+      </div>
+      <div id="div_informacoes">
+        <div id="div_personagens">
+          <div id="div_imagem_personagem"></div>
+        </div>
+        <div id="div_texto_personagem">
+          <p id="p_texto"></p>
+        </div>
+      </div>
+    </div>
+    </section>
+  </body>
+</html>
+
+<script>
+  window.onload = limparSelect();
+  window.onload = verificarLogin();
+
+function verificarLogin() {
+    if(sessionStorage.ID_USUARIO != undefined) {
+        document.getElementById("nav_ul3").style.display = 'none';
+        document.getElementById("nav_ul4_personagens").style.display = 'flex';
+    } else {
+        document.getElementById("nav_ul4_personagens").style.display = 'none';
+    }
+
+}
+
+function logOut() {
+  sessionStorage.clear();
+  window.location.href = 'index.html';
+}
+
+  var personagens = [
+    {
+      nome: "Kratos",
+      raca: "Mortal/Deus",
+      descricao: 'Nascido na cidade-estado grega de Esparta, Kratos é o filho semideus de Zeus e uma mulher mortal, embora ele não saiba quem é seu pai durante a maior parte de sua vida. Hera ordenou a execução de Kratos no dia em que ele nasceu, mas o Rei dos Deuses se apiedou da criança e se recusou, deixando-o em Esparta para ser criado por Callisto.<br>Kratos ficou conhecido como "O Fantasma de Esparta" após um ataque a um vilarejo de seguidores de Atena ordenado por Ares, onde matou todos que lá estavam, inclusive sua esposa e filha, e foi amaldiçoado pela oráculo local, condenado a viver com a pele marcada pelas cinzas de sua esposa e filha mortas.',
+    },
+    {
+      nome: "Atena",
+      raca: "Deus",
+      descricao: 'Atena era a deusa olimpiana da sabedoria, e é filha de Zeus.<br>Atena, ao lado do seu irmão Ares, foi em busca do "guerreiro marcado" a mando de Zeus. O alvo era um garoto espartano chammado Deimos. Chegando lá, eles capturaram Deimos, e Ares estava prestes a matar o irmão do garoto, Kratos, mas foi interrompido por Atena, que disse que eles já tinham o que procuravam.<br>Anos mais tarde, a cidade de Atenas estava sendo atacada por Ares. Atena, por não poder entrar em guerra com Ares devido às regras impostas por Zeus, auxiliou Kratos em sua busca pela Caixa de Pandora, para que ele pudesse derrotar Ares, e prometeu ao espartano o perdão dos deuses pelos pecados do mesmo.',
+    },
+    {
+      nome: "Zeus",
+      raca: "Deus",
+      descricao: "Zeus é o Deus do Céu e do Raio, e também regente do Olimpo.<br>Durante o reinado dos titãs, Cronos recebeu uma profecia, que previa sua eventual queda para um de seus filhos. Então, Cronos começou a devorar cada um de suas crianças, uma a uma. Ate que Reia, sua esposa, resolveu esconder Zeus, seu filho mais novo, antes que o pai pudesse aprisiona-lo em seu estomago. Zeus foi criado por Gaia, que o manteve longe de Cronos. Zeus cresceu e libertou seus irmãos de Cronos.<br>Após isso, Zeus declarou guerra aos titãs, e assim começou a Grande Guerra. Zeus criou a Lâmina do Olimpo, e com ela, deu um fim à guerra, com a vitória dos olimpianos.<br>Anos depois, Zeus se relacionou com uma mortal chamada Callisto, a qual deu a luz à Kratos e Deimos. Hera ordenou que Zeus matasse Kratos, porém, Zeus não o fez. Mais tarde, após o oráculo profetizar a destruição do Olimpo por um guerreiro marcado, Zeus ordenou a captura de Deimos.",
+    },
+    {
+      nome: "Gaia",
+      raca: "Titã/Deus",
+      descricao: "Sendo uma primordial, Gaia era descendente de Chaos. Juntos, ela e os outros primordiais criaram o universo.<br>Desejando explorar seu traballho, eles criaram a Ilha da Criação, onde toda vida começaria. A primeira a nascer foi Gaia, que se tornaria a Mãe Terra. Urano, o Deus primordial do Céu, se juntou a Gaia e deram a luz ao Tártaro, Ponto, aos Cyclopes, aos Hecatônquiros e aos Titãs.<br>Gaia foi a responsável por criar Zeus após sua mãe o esconder de Cronos, até que o garoto crescesse e se tornasse forte o suficiente para enfrentar Cronos e salvar seus irmãos.<br>Após Zeus declarar guerra aos titãs, Gaia, estando no passado, se comunica com Kratos e se torna sua aliada em sua vingança contra Zeus.",
+    },
+    {
+      nome: "Ares",
+      raca: "Deus",
+      descricao: "Ares é o Deus da Guerra original e filho de Zeus. Junto de Atena, ele invadiu a cidade de Esparta em busca do Guerreiro Marcado, que, de acordo com a profecia, destronaria Zeus e destruiria o Olimpo. Ares então capturou Deimos, o irmão mais novo de Kratos e o levou para o Domínio da Morte, onde ele foi torturado por muitos anos, por Tânatos, o Deus da Morte. Anos depois, Kratos cresceu e se tornou o general espartano.<br>Em uma guerra contra o exército bárbaro, os espartanos foram derrotados, e diante de uma morte iminente, Kratos clama pela ajuda de Ares, oferecendo sua servidão. Ares atende o chamado, destrói os bárbaros e concede a Kratos as Lâminas do Caos.",
+    },
+    {
+      nome: "Cronos",
+      raca: "Titã",
+      descricao: "Cronos é o Senhor dos Titãs. Nascido na Ilha da Criação, lar das Irmãs do Destino, ele é filho de Gaia e também pai dos três primeiros Deuses Olímpicos. Um dia foi profetizado que um dos próprios filhos destronaria Cronos. Para evitar que isso se tornasse realidade, o titã presenteou as Irmãs com os Corcéis do Tempo, porém, isso não adiantaria. Então, em mais uma tentativa de prevenir que tal profecia se tornasse realidade, Cronos engoliu todos os seus provenientes, aprisionando-os em sua barriga.<br>Um dia, Reia se cansou de ver seus filhos sendo devorados e levou o pequeno Zeus para longe dos olhos de Cronos.<br>Anos depois, Cronos viu Zeus libertar seus irmãos e entrar em guerra contra todos os titãs. Os deuses eram muito poderosos e os titãs foram derrotados por Zeus. Como punição, imposta por seu próprio filho caçula, Cronos foi condenado a eternamente carregar o Templo de Pandora em suas costas, enquanto vagava sem rumo pelo Deserto das Almas Perdidas. ",
+    },
+    {
+      nome: "Hades",
+      raca: "Deus",
+      descricao: "Hades é o Deus do submundo, da riqueza, e dos mortos. Ele é irmão de Zeus e Poseidon. Filho de Cronos e Reia.<br>Filho de Cronos, Hades foi devorado ao nascer pelo titã, e salvo por seu irmão Zeus anos depois.<br>Ele foi anteriormente um aliado do Kratos na luta contra Ares, mas devido a morte de sua esposa Perséfone e outros membros de sua família pelas mãos do Kratos, ele se torna um inimigo do mesmo.<br>Hades foi convocado por Zeus para defender o Olimpo na batalha contra Kratos e os titãs.",
+    },
+    {
+      nome: "Poseidon",
+      raca: "Deus",
+      descricao: "Poseidon é o governante dos oceanos e rei de Atlântida, seu poder é apenas comparado, ou então superado, ao de seus irmãos, Zeus e Hades.<br>Como a maioria dos seus irmãos, Poseidon havia sido devorado por Cronos, seu próprio pai, logo após o nascimento. Eles só foram libertos anos depois, quando Zeus, que havia escapado, atacou Cronos e libertou seus irmãos, dando início então a Grande Guerra entre titãs e deuses. Após a vitória dos olimpianos, Poseidon ganhou o domínio sobre os mares e oceanos.<br>Depois que Kratos libertou Thera, a titã das chamas, de sua prisão em Atlântida, causando a completa destruição da mesma, Poseidon ficou extremamente enfurecido. Ele jura que um dia o Fantasma de Esparta pagará pelos seus atos.<br>Poseidon, assim como diversos outros deuses e aliados do Olimpo, foi convocado por Zeus para defender o Monte Olimpo do ataque de Kratos e dos titãs. ",
+    },
+    {
+      nome: "Atreus",
+      raca: "Deus/Gigante",
+      descricao: 'Atreus é filho do espartano Kratos e uma giganta nativa de Jötunheim chamada Laufey, a quem ele e seu pai chamam de "Faye". Seu passado não foi extensivamente revelado, no entanto, está implícito que ele e sua mãe viveram sem Kratos por um tempo, pois o próprio Kratos não tem certeza da capacidade de caça do menino. Após a morte de sua mãe, Atreus sai com seu pai em uma aventura com o objetivo de espalhar suas cinzas no topo do pico mais alto de todos os reinos.<br>Em sua jornada, Atreus começa a aprender a caçar e matar com seu pai. Kratos também o ensina a lutar.<br>Ao contrário de Kratos, Atreus não é um assassino nato e parece hesitar diante da perspectiva de acabar com uma vida. Ele está, no entanto, disposto a lutar.',
+    },
+    {
+      nome: "Odin",
+      raca: "Deus",
+      descricao: 'Odin é o deus nórdico da guerra, da morte e da sabedoria, bem como o governante de Asgard. Ele é o pai de Thor, Týr, Heimdall e Baldur.<br>Nascido de Borr, Odin sentia que os Aesir eram aptos para serem os governantes supremos dos Nove Reinos. Ele, então, matou seu próprio bisavô e qualquer outra pessoa que entrasse em seu caminho.<br>Depois de se consolidar como o "Pai de Todos", Odin continuou a travar guerras com outros reinos, até que ele encontrou os Vanir e as duas forças lutaram até chegar em um impasse. Neste ponto, ambos os lados se cansaram de lutar e Odin se casou com Freya para acabar com a luta. Freya abandonou Odin e isso irritou o Pai de Todos, que a amaldiçoou.<br>Odin também procurou os segredos de Jötunheim e os gigantes. No entanto, ele fez deles seus inimigos e começou uma campanha de genocídio, matando qualquer gigante encontrado.',
+    },
+    {
+      nome: "Thor",
+      raca: "Deus",
+      descricao: "Thor é o deus nórdico Aesir do trovão, relâmpago, tempestades e força.<br>Thor nasceu como o filho de Odin e Fjörgyn. Em algum momento de sua vida, ele se tornou marido de Sif e teve dois filhos com ela: Modi e Thrúd. Ele também, em algum momento, assassinou todos os gigantes de Jötunheim (com exceção de Jörmungandr) e ganhou a temível reputação de mais forte dentre os deuses nórdicos.<br>Dizem que Thor é incrivelmente cruel, implacável e sanguinário, mostrando pouca ou nenhuma misericórdia para com seus inimigos. Sua sede de sangue foi notada por Mimir como sendo a única coisa maior que a paranóia de Odin.",
+    },
+    {
+      nome: "Freya",
+      raca: "Deus",
+      descricao: "Freya (também conhecida como A Bruxa da Floresta) é uma deusa nórdica que ajuda Kratos e Atreus em sua jornada. No caminho, Freya se tornou próxima a Atreus, e se desenvolveu uma amizade entre eles.<br>Freya fora a líder dos deuses dos Vanir e concordara em casar-se com Odin para trazer a paz entre os Vanir e Aesir. Durante esse tempo, ela se tornou Rainha das Valquírias, mas em algum momento durante seu casamento com Odin, ele começou a aprender os caminhos da magia de Freya e começou a usá-la para propósitos injustos. Freya optou por deixar Odin, mas ela não podia fugir para o seu próprio refúgio pois os Vanir viam seu casamento com Odin como uma traição, forçando-a a fugir para Midgard. Por ter terminado seu casamento com Odin, ele colocou uma série de maldições sobre ela. Uma que a impedia de sair de Midgard e outra que a impedia de prejudicar qualquer criatura viva - por meios físicos ou mágicos.",
+    },
+    {
+      nome: "Baldur",
+      raca: "Deus",
+      descricao: 'Baldur é filho de Odin e Freya, sendo o meio-irmão de Thor, Týr e Heimdall. Em algum momento de sua vida, as runas contaram à sua mãe que ele sofreria uma "morte desnecessária".<br>Determinada a evitar sua morte a qualquer custo, Freya pôs nele um feitiço que o tornou invulnerável a todas as ameaças, físicas ou mágicas. No entanto, o feitiço teve um efeito colateral: remover a capacidade de Baldur de sentir qualquer coisa, dor ou prazer. Como resultado, Baldur enlouqueceu e foi consumido de ódio por sua mãe, jurando nunca perdoá-la.<br>Baldur responde à ordem de Odin de caçar Kratos, visitando-o em sua própria casa.',
+    },
+  ];
+  function visualizar(personagem) {
+    div_imagem_personagem.innerHTML = `<img class="imagem_personagem" src="./assets/imagens/${personagens[personagem].nome}_image.jpg">`;
+
+    p_texto.innerHTML = `<p><span>Nome:</span> ${personagens[personagem].nome}</p>
+                         <p><span>Raça:</span> ${personagens[personagem].raca}</p>
+                         <p><span>Descrição:</span> ${personagens[personagem].descricao}</p>`;
+  }
+
+  function limparSelect() {
+    select_personagem.value = -1;
+  }
+</script>

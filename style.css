@@ -449,3 +449,115 @@ iframe {
     font-size: 16px;
     font-weight: 600;
 }
+
+#body_personagens {
+    background-color: rgba(0, 0, 0, 0.5);
+    background-image: url('imagens/Pattern.jpg');
+    background-blend-mode: multiply;
+}
+
+#section_personagens {
+    display: flex;
+    justify-content: center;
+}
+
+#div_imagem_personagem {
+    height: 400px;
+    width: 300px;
+}
+
+#div_imagem_personagem img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+
+}
+
+#div_container_personagens {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    height: 600px;
+    width: 1000px;
+    border-radius: 20px;
+    background-color: black;
+    border: 1px solid white;
+}
+
+#div_texto_personagem{
+    color: white;
+    margin-right: 20px;
+    padding-left: 20px;
+}
+
+#div_informacoes {
+    display: flex;
+    flex-direction: row;
+    margin-top: 65px;
+    margin-left: 20px;
+}
+
+#p_texto {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 20px;
+}
+
+#p_texto span {
+    color: red;
+    font-weight: bold;
+}
+
+#div_select {
+    align-self: center;
+    padding-top: 20px;
+}
+
+#div_select button {
+    width: 110px;
+    height: 20px;
+    background-color: rgb(231, 12, 12);
+    border-radius: 5px;
+    border: 0px solid #97a4af;
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+    font-family: 'GodOfWar', sans-serif;
+    font-weight: 700;
+}
+
+#div_select button:hover {
+    width: 110px;
+    height: 20px;
+    background-color: white;
+    border-radius: 5px;
+    border: 0px solid #97a4af;
+    color: rgb(231, 12, 12);
+    cursor: pointer;
+    font-size: 15px;
+    font-family: 'GodOfWar', sans-serif;
+    font-weight: 700;
+}
+
+#div_select select {
+    height: 20px;
+    color: rgb(231, 12, 12);
+    background-color: white;
+    font-size: 15px;
+    font-family: 'GodOfWar', sans-serif;
+    border-radius: 5px;
+    border: 0px solid black;
+    text-align: center;
+}
+
+#div_select option {
+    height: 20px;
+    color: rgb(231, 12, 12);
+    background-color: white;
+    font-size: 15px;
+    font-family: 'GodOfWar', sans-serif;
+    border-radius: 5px;
+    border: 0px solid black;
+}

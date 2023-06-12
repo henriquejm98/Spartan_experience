@@ -7,7 +7,7 @@
     <script src="./js/funcoes.js"></script>
     <link
       rel="icon"
-      href="imagens/kisspng-god-of-war-omega-collection-t-shirt-stencil-krato-note-xhstormr-5b7c91a2467ab5.9342983115348904022887.png"
+      href="assets/imagens/kisspng-god-of-war-omega-collection-t-shirt-stencil-krato-note-xhstormr-5b7c91a2467ab5.9342983115348904022887.png"
     />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -23,8 +23,8 @@
   <body id="body_quiz">
     <nav class="navbar">
       <ul class="nav_ul1">
-        <li><a href="">Inicio</a></li>
-        <li><a href="">Personagens</a></li>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="personagens.html">Personagens</a></li>
         <li><a href="">Sobre a Saga</a></li>
       </ul>
       <ul class="nav_ul2">
@@ -36,7 +36,7 @@
             Gráficos
           </button>
         </li>
-        <li><button>Sair</button></li>
+        <li><button onclick="logOut()">Sair</button></li>
       </ul>
     </nav>
     <section class="section_quiz">
@@ -265,6 +265,11 @@
 </html>
 
 <script>
+   function logOut() {
+    sessionStorage.clear();
+    window.location.href = 'index.html';
+  }
+
   var questao = 1;
   var respostas = [];
   var respostas_corretas = [

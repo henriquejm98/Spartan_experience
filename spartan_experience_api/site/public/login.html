@@ -16,13 +16,15 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        
 </head>
 
 <body id="body_login">
     <nav class="navbar_login">
         <ul class="nav_ul1">
             <li><a href="index.html">Inicio</a></li>
-            <li><a href="">Personagens</a></li>
+            <li><a href="personagens.html">Personagens</a></li>
             <li><a href="">Sobre a Saga</a></li>
         </ul>
         <ul class="nav_ul2">
@@ -57,7 +59,7 @@
                         <input type="password" id="senha_input"><br>
                     </div>
                     <button onclick="entrar()">Entrar</button><br>
-                    <a id="sem_cadastro" href="">Não tem cadastro?</a>
+                    <a id="sem_cadastro" href="cadastro.html">Não tem cadastro?</a>
                 </div>
             </div>
         </section>
@@ -76,7 +78,12 @@
         if (emailVar == "" || senhaVar == "") {
             // cardErro.style.display = "block"
             // mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
-            finalizarAguardar();
+            Swal.fire(
+                'ERRO!',
+                'Insira seu e-mail e senha!',
+                'error'
+            )
+            // finalizarAguardar();
             return false;
         }
         // else {
@@ -100,7 +107,11 @@
 
             if (resposta.ok) {
                 console.log(resposta);
-
+                Swal.fire(
+                'SUCESSO!',
+                'Login realizado com sucesso',
+                'success'
+                )
                 resposta.json().then(json => {
                     console.log(json);
                     console.log(JSON.stringify(json));
@@ -110,13 +121,17 @@
                     sessionStorage.ID_USUARIO = json.idUsuario;
 
                     setTimeout(function () {
-                        window.location = "quiz.html";
-                    }, 1000); // apenas para exibir o loading
+                        window.location = "index.html";
+                    }, 2000); // apenas para exibir o loading
 
                 });
 
             } else {
-
+                Swal.fire(
+                'ERRO!',
+                'E-mail e/ou senha inválidos!',
+                'error'
+                )
                 console.log("Houve um erro ao tentar realizar o login!");
 
                 resposta.text().then(texto => {

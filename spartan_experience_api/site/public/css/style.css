@@ -13,7 +13,7 @@
     background-image: url("../assets/imagens/8430161.png");
     background-size: cover; /*1540px 740px;*/
     background-blend-mode: multiply;
-    height: 739px;
+    height: 100vh; /*739px;*/
     width: 100%;
 }
 
@@ -45,6 +45,34 @@
 
 .nav_ul3 {
     gap: 30px;
+}
+
+#nav_ul3 {
+    gap: 30px;
+}
+
+#nav_ul4 {
+    gap: 30px;
+}
+
+#nav_ul4_personagens {
+    gap: 30px;
+}
+
+#nav_ul4_personagens button {
+    width: 100px;
+    height: 30px;
+    background-color: white;
+    border-radius: 12px;
+    border: 0px solid black;
+    color: rgb(231, 12, 12);
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+#nav_ul4_personagens button:hover {
+    animation: botao-hover_login 0.7s both;
 }
 
 .navbar button{
@@ -306,10 +334,19 @@ iframe {
 }
 
 .div_input input {
-    height: 18px;
-    width: 210px;
+    height: 25px;
+    width: 300px;
     border-radius: 5px;
     border: 0px solid black;
+}
+
+#select_personagem{
+    width: 300px;
+    height: 25px;
+}
+
+#persoFav{
+    text-align: start;
 }
 
 .div_input span {
@@ -356,10 +393,16 @@ iframe {
     margin-top: 10px;
 }
 
+.div_input select {
+    border-radius: 5px;
+    border: 0px solid black;
+    text-align: center;
+}
+
 .ajustar {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: start;
 }
 
 .section_quiz {
@@ -451,4 +494,123 @@ iframe {
     font-weight: 600;
 }
 
+#body_personagens {
+    background-color: rgba(0, 0, 0, 0.5);
+    background-image: url('../assets/imagens/Pattern.jpg');
+    background-blend-mode: multiply;
+}
 
+#section_personagens {
+    display: flex;
+    justify-content: center;
+}
+
+#div_imagem_personagem {
+    height: 400px;
+    width: 300px;
+}
+
+#div_imagem_personagem img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+
+}
+
+#div_container_personagens {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    height: 600px;
+    width: 1000px;
+    border-radius: 20px;
+    background-color: black;
+    border: 1px solid white;
+}
+
+#div_texto_personagem{
+    color: white;
+    margin-right: 20px;
+    padding-left: 20px;
+}
+
+#div_informacoes {
+    display: flex;
+    flex-direction: row;
+    margin-top: 65px;
+    margin-left: 20px;
+}
+
+#p_texto {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 20px;
+}
+
+#p_texto span {
+    color: red;
+    font-weight: bold;
+}
+
+#div_select {
+    align-self: center;
+    padding-top: 20px;
+}
+
+#div_select button {
+    width: 110px;
+    height: 20px;
+    background-color: rgb(231, 12, 12);
+    border-radius: 5px;
+    border: 0px solid #97a4af;
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+    font-family: 'GodOfWar', sans-serif;
+    font-weight: 700;
+}
+
+#div_select button:hover {
+    width: 110px;
+    height: 20px;
+    background-color: white;
+    border-radius: 5px;
+    border: 0px solid #97a4af;
+    color: rgb(231, 12, 12);
+    cursor: pointer;
+    font-size: 15px;
+    font-family: 'GodOfWar', sans-serif;
+    font-weight: 700;
+}
+
+#div_select select {
+    height: 20px;
+    color: rgb(231, 12, 12);
+    background-color: white;
+    font-size: 15px;
+    font-family: 'GodOfWar', sans-serif;
+    border-radius: 5px;
+    border: 0px solid black;
+    text-align: center;
+}
+
+#div_select option {
+    height: 20px;
+    color: rgb(231, 12, 12);
+    background-color: white;
+    font-size: 15px;
+    font-family: 'GodOfWar', sans-serif;
+    border-radius: 5px;
+    border: 0px solid black;
+}
+
+canvas {
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+.sobre_saga {
+    height: 100vh;
+}

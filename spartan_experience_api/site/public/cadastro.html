@@ -18,13 +18,14 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body id="body_cadastro">
     <nav class="navbar">
         <ul class="nav_ul1">
             <li><a href="index.html">Inicio</a></li>
-            <li><a href="">Personagens</a></li>
+            <li><a href="personagens.html">Personagens</a></li>
             <li><a href="">Sobre a Saga</a></li>
         </ul>
         <ul class="nav_ul2">
@@ -45,8 +46,9 @@
             <input id="email_input">
         </div>
         <div class="div_input ajustar">
-            <h2>Personagem favorito <span>*</span></h2>
+            <h2 id="persoFav">Personagem favorito <span>*</span></h2>
             <select name="" id="select_personagem">
+                <option value="0">Selecione um personagem</option>
                 <option value="1">Kratos</option>
                 <option value="2">Ares</option>
                 <option value="3">Zeus</option>
@@ -70,7 +72,7 @@
         </div>
         <div class="div_cadastrar">
         <button onclick="cadastrar()">Cadastrar</button> <br>
-        <a href="">Já possui conta?</a>
+        <a href="login.html">Já possui conta?</a>
         </div>
     </section>
 </body>
@@ -78,6 +80,7 @@
 </html>
 
 <script>
+    
     function cadastrar() {
         //aguardar();
 
@@ -89,11 +92,15 @@
         var senhaVar = senha_input.value;
         var confirmacaoSenhaVar = confirmacao_senha_input.value;
 
-        if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
+        if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "" || personagemVar == 0) {
            // cardErro.style.display = "block"
            // mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
-    
-            finalizarAguardar();
+            Swal.fire(
+                'ERRO!',
+                'Insira todos os campos!',
+                'error'
+            )
+            // finalizarAguardar();
             return false;
         }
         //else {
@@ -120,7 +127,11 @@
 
             if (resposta.ok) {
                 //cardErro.style.display = "block";
-
+                Swal.fire(
+                'SUCESSO!',
+                'Cadastro realizado com sucesso!',
+                'success'
+                )
                 //mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
         
                 setTimeout(() => {

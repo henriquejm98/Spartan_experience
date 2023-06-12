@@ -40,6 +40,13 @@ select * from usuario;
 select * from personagem;
 truncate table usuario;
 select * from quiz;
-select count(fkUsuario) as verificacao, idQuiz  from quiz join usuario on idUsuario = fkUsuario where idUsuario = 1 group by idQuiz;
+
+UPDATE quiz SET percentualAcerto = 100 where idQuiz = 1;
+
+select count(fkUsuario) as verificacao, idQuiz from quiz join usuario on idUsuario = fkUsuario where idUsuario = 1 group by idQuiz;
 select count(usuario.fkPersonagem) as voto, personagem.nome as personagem from usuario join personagem on personagem.idPersonagem = usuario.fkPersonagem group by usuario.fkPersonagem;
 select concat('Acertos de ', usuario.nome, ' (%)') as informacao, quiz.percentualAcerto as percentual from usuario join quiz on usuario.idUsuario = quiz.fkUsuario where usuario.idUsuario = 1 group by quiz.percentualAcerto, usuario.nome;
+
+create user 'cruduser'@'localhost' identified by 'urubu2020';
+grant insert, select, delete, update on spartan_experience.* to 'cruduser'@'localhost';
+flush privileges;
