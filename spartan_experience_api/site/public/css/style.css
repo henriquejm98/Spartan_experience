@@ -178,11 +178,57 @@ iframe {
     border-radius: 15px;
 }
 
+#sobre_saga {
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4);
+    background-image: url('../assets/imagens/sobreasaga_fundo.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-blend-mode: multiply;
+    display: flex;
+    justify-content: center;
+}
+
+
+.div_esquerda {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    align-items: end;
+}
+
+.div_esquerda img{
+    height: 670px;
+}
+
+.p_texto_saga {
+    text-align: justify;
+}
+
+.div_direita {
+    width: 50%;
+    color: white;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 0px 4px 4px rgb(0, 0, 0, 0.25);
+    font-size: 23px;
+    padding-left: 20px;
+}
+
+/* .div_direita p{
+    padding-right: 20px;
+} */
+
 #body_login{
     background-color: rgba(0, 0, 0, 0.8);
     background-image: url("../assets/imagens/godofwariii_01.jpeg");
     background-size: cover;
     background-blend-mode: multiply;
+    height: 100vh;
 }
 
 .navbar_login {
@@ -313,6 +359,7 @@ iframe {
     background-image: url("../assets/imagens/God-of-War-5.jpg");
     background-size: cover;
     background-blend-mode: multiply;
+    height: 100vh;
 }
 
 #section_cadastro {
@@ -343,6 +390,7 @@ iframe {
 #select_personagem{
     width: 300px;
     height: 25px;
+    background-color: white;
 }
 
 #persoFav{
@@ -475,6 +523,7 @@ iframe {
     background-size: cover;
     background-repeat: no-repeat;
     background-blend-mode: multiply;
+    height: 100vh;
 }
 
 .div_botoes {
@@ -498,6 +547,7 @@ iframe {
     background-color: rgba(0, 0, 0, 0.5);
     background-image: url('../assets/imagens/Pattern.jpg');
     background-blend-mode: multiply;
+    height: 100vh;
 }
 
 #section_personagens {
@@ -554,6 +604,10 @@ iframe {
     font-weight: bold;
 }
 
+#p_descricao {
+    text-align: justify;
+}
+
 #div_select {
     align-self: center;
     padding-top: 20px;
@@ -606,11 +660,128 @@ iframe {
     border: 0px solid black;
 }
 
+.div_sinopses {
+    background-color: rgba(0, 0, 0, 0.4);
+    background-image: url('../assets/imagens/Pattern.jpg');
+    height: 100vh;
+    background-blend-mode: multiply;
+    display: flex;
+}
+
+.div_imagem_jogo {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.div_imagem_jogo img {
+    height: 500px;
+    width: 50%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.div_texto_sinopse {
+    width: 65%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.div_quadrado {
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 95%;
+    height: 80%;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    color: white;
+    font-size: 24px;
+    border: 1px solid white;
+}
+
+.div_quadrado h1 {
+    color: #CA4A11;
+    margin-top: 40px;
+}
+
+.div_quadrado p {
+    margin-top: 30px;
+    font-weight: 500;
+    text-align: justify;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
 canvas {
-    width: 100% !important;
+    width:100% !important;
     height: 100% !important;
   }
 
-.sobre_saga {
+footer {
+    height: 150px;
+    display: flex;
+    font-size: 25px;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(231, 12, 12);
+    color: white;
+
+}
+
+footer img {
+    height: 100px;
+    width: 100px;
+    border-radius: 100px;
+    margin-left: 20px;
+}
+
+.div_sinopses2 {
+    background-color: rgba(0, 0, 0, 0.4);
+    background-image: url('../assets/imagens/Pattern.jpg');
     height: 100vh;
+    background-blend-mode: multiply;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.div_texto_sinopse2 {
+    width: 65%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+#body_dashboard {
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    background-image: url('../assets/imagens/Kratos_God_of_War_1920x1080.jpg');
+    background-blend-mode: multiply;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.slide-show{
+    background-color: white;
+    height: 300px;
+    width: 500px;
+    border-radius: 20px;
+}
+
+#content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    gap: 20px;
+
+}
+
+.slide-show li {
+    list-style: none;
 }

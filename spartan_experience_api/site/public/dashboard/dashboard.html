@@ -24,25 +24,53 @@
 </head>
 
 <body onload="iniciarGraficos()">
-    <div id="dashboard-container">
-        <div id="content">
-            <div class="slide-show select-disable">
-                <h2>Personagens favoritos</h2>
-                <ul class="slides-list">
-                    <li class="slide">
-                        <canvas id="myChart"></canvas>
-                    </li>
-                </ul>
-            </div>
-            <div class="slide-show select-disable">
-                <h2>Média do quiz</h2>
-                <ul class="slides-list">
-                    <li class="slide">
-                        <canvas id="myChart2"></canvas>
-                    </li>
-                </ul>
+    <div id="body_dashboard">
+        <nav class="navbar_login">
+            <ul class="nav_ul1">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="../personagens.html">Personagens</a></li>
+                <li><a href="../index.html#sobre_saga">Sobre a Saga</a></li>
+            </ul>
+            <ul class="nav_ul2">
+                <li><img src="../assets/imagens/God_of_War_2018_logo 1.png" alt=""></li>
+            </ul>
+            <ul class="nav_ul3">
+                <li>
+                  <button onclick="window.location.href='../quiz.html'">Quiz</button>
+                </li>
+                <li><button onclick="logOut()">Sair</button></li>
+              </ul>
+        </nav>
+    
+    
+        <div id="dashboard-container">
+            <div id="content">
+                <div class="slide-show">
+                    <ul class="slides-list">
+                        <li class="slide">
+                            <canvas id="myChart"></canvas>
+                        </li>
+                    </ul>
+                </div>
+                <div class="slide-show">
+                    <ul class="slides-list">
+                        <li class="slide">
+                            <canvas id="myChart2"></canvas>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
+            </section>
+        </div>
+        <footer>
+            <p id="p_texto_footer">
+              Projeto idealizado e desenvolvido por Henrique Jaldim Mosca
+            </p>
+            <div>
+              <img src="../assets/imagens/eu.jpeg" alt="">
+            </div>
+          </footer>
 </body>
 
 </html>
@@ -124,7 +152,7 @@
                 {
                     yAxisID: 'y-totalpersonagens',
                     label: 'Personagem Favorito',
-                    backgroundColor: ['#FF1493', '#FFFF00', '#FF4500', '#00FF00', '#4B0082', '#0000FF', '#FFF', '#ADD8e6', '#FF007F', '#008000'],
+                    backgroundColor: '#000',
                     fill: true,
                     data: []
                 }
@@ -191,7 +219,7 @@
                 
                     yAxisID: 'y-totalporcentagem',
                     label: 'Percentual de Acertos',
-                    backgroundColor: ['#FF1493', '#FFFF00', '#FF4500', '#00FF00', '#4B0082', '#0000FF', '#FFF', '#ADD8e6', '#FF007F', '#008000'],
+                    backgroundColor: 'rgb(231, 12, 12)',
                     fill: true,
                     data: []
                 }
@@ -218,7 +246,7 @@
                 stacked: false,
                 title: {
                     display: true,
-                    text: 'Os Personagens mais Escolhidos'
+                    text: 'Acertos do Quiz'
                 },
 
                 scales: {
@@ -239,5 +267,10 @@
             }
         });
 
+    }
+
+    function logOut() {
+    sessionStorage.clear();
+    window.location.href = "index.html";
     }
 </script>
